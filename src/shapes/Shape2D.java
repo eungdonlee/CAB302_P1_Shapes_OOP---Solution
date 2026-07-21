@@ -58,5 +58,3 @@ public abstract class Shape2D {
      */
     public abstract Point[] getVertices();
 }
-
-// test comment

@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96882280-fe53-4c19-b64e-5651a773cd60" name="Changes" comment="">
+    <list default="true" id="96882280-fe53-4c19-b64e-5651a773cd60" name="Changes" comment="Test Push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shapes/Shape2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shapes/Shape2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shapes/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shapes/Circle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +15,65 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.000000000000026" />
+      <entry key="MS500" value="1.001918241396999" />
+      <entry key="S2" value="1.2092790787053815" />
+      <entry key="S5" value="1.5349218352088958" />
+      <entry key="S10" value="1.7313835076134105" />
+      <entry key="S30" value="1.9009798002673546" />
+      <entry key="S60" value="1.9491995576628522" />
+      <entry key="M2" value="1.9742687296956896" />
+      <entry key="M5" value="1.9896269311603803" />
+      <entry key="M10" value="1.9947999452957266" />
+      <entry key="M15" value="1.9965302853911986" />
+      <entry key="M30" value="1.9982636352142646" />
+      <entry key="H1" value="1.999131440409251" />
+      <entry key="H2" value="1.9995656258641805" />
+      <entry key="H4" value="1.9997827893418552" />
+      <entry key="D1" value="1.9999637949467859" />
+      <entry key="W1" value="1.9999948277692856" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9395227492140314" />
+      <entry key="MS500" value="0.9894156283872688" />
+      <entry key="S2" value="1.2032835690058628" />
+      <entry key="S5" value="1.5307169207724516" />
+      <entry key="S10" value="1.7287348525960977" />
+      <entry key="S30" value="1.8999395802500214" />
+      <entry key="S60" value="1.9486570689871223" />
+      <entry key="M2" value="1.9739916671370494" />
+      <entry key="M5" value="1.9895146802384769" />
+      <entry key="M10" value="1.994743579685687" />
+      <entry key="M15" value="1.9964926547648338" />
+      <entry key="M30" value="1.9982447930778087" />
+      <entry key="H1" value="1.9991220126264222" />
+      <entry key="H2" value="1.9995609102930172" />
+      <entry key="H4" value="1.9997804311361989" />
+      <entry key="D1" value="1.9999634018541546" />
+      <entry key="W1" value="1.9999947716117663" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -64,5 +123,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Test Push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Push" />
   </component>
 </project>

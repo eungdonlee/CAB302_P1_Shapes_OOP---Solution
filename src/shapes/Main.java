@@ -106,12 +106,12 @@ public class Main {
                 case ShapeType.CIRCLE:
                     shapes[i] = readCircle(userInput, centre);
                     break;
-                // case ShapeType.RECTANGLE:
-                //     shapes[i] = readRectangle(userInput, centre);
-                //     break;
-                // case ShapeType.SQUARE:
-                //     shapes[i] = readSquare(userInput, centre);
-                //     break;
+                 case ShapeType.RECTANGLE:
+                     shapes[i] = readRectangle(userInput, centre);
+                     break;
+                 case ShapeType.SQUARE:
+                     shapes[i] = readSquare(userInput, centre);
+                     break;
                 default:
                     System.out.println( "Invalid choice" );
                     break;

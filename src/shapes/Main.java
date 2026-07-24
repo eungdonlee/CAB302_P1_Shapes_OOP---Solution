@@ -100,9 +100,9 @@ public class Main {
             ShapeType st = ShapeType.from(choice);
             switch (st)
             {
-                // case ShapeType.TRIANGLE:
-                //     shapes[i] = readEquilateralTriangle(userInput, centre);
-                //     break;
+                 case ShapeType.TRIANGLE:
+                     shapes[i] = readEquilateralTriangle(userInput, centre);
+                     break;
                 case ShapeType.CIRCLE:
                     shapes[i] = readCircle(userInput, centre);
                     break;

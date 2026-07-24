@@ -58,11 +58,11 @@ public class EquilateralTriangle extends Shape2D {
         setSideLength(sideLength);
     }
 
-    /**`
+    /**
      * Check if the point is contained within the equilateral triangle
      * @param point The point to check
      * @return True if the point is contained within the equilateral triangle, false otherwise
-     */`
+     */
     @Override
     public boolean containsPoint(Point point) {
         double dx = point.getXCord() - centre.getXCord();

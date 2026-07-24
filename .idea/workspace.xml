@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96882280-fe53-4c19-b64e-5651a773cd60" name="Changes" comment="Shape2D + Circle + EquilateralTriangle">
+    <list default="true" id="96882280-fe53-4c19-b64e-5651a773cd60" name="Changes" comment="Shape2D + Circle + EquilateralTriangle (Error Correction)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shapes/EquilateralTriangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shapes/EquilateralTriangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shapes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shapes/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shapes/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shapes/Rectangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,23 +18,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000521773906" />
-      <entry key="S2" value="1.0153031945589144" />
-      <entry key="S5" value="1.2193971549875908" />
-      <entry key="S10" value="1.61249221691163" />
-      <entry key="S30" value="2.320909223344162" />
-      <entry key="S60" value="2.621070863487875" />
-      <entry key="M2" value="2.7993982329690263" />
-      <entry key="M5" value="2.9169003632139296" />
-      <entry key="M10" value="2.957957236145271" />
-      <entry key="M15" value="2.971860692359538" />
-      <entry key="M30" value="2.9858746296917316" />
-      <entry key="H1" value="2.992923325897075" />
-      <entry key="H2" value="2.9964581586252272" />
-      <entry key="H4" value="2.998276955381458" />
-      <entry key="D1" value="3.9376591091703546" />
-      <entry key="W1" value="8.24735764294341" />
+      <entry key="MS100" value="1.0005125569744278" />
+      <entry key="MS500" value="1.2210914976421632" />
+      <entry key="S2" value="2.0427701935672333" />
+      <entry key="S5" value="3.116179384597386" />
+      <entry key="S10" value="3.8623726682783315" />
+      <entry key="S30" value="4.565360850908136" />
+      <entry key="S60" value="4.774952940968037" />
+      <entry key="M2" value="4.904360689245888" />
+      <entry key="M5" value="5.34942206339352" />
+      <entry key="M10" value="6.066305848843046" />
+      <entry key="M15" value="6.511581277848083" />
+      <entry key="M30" value="7.132613350244277" />
+      <entry key="H1" value="7.530106828868318" />
+      <entry key="H2" value="7.755223766565673" />
+      <entry key="H4" value="7.875096424591265" />
+      <entry key="D1" value="8.910281612026342" />
+      <entry key="W1" value="13.239167093461816" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -57,23 +56,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="8.132095351082771E-33" />
-      <entry key="MS500" value="3.8198087772605005E-7" />
-      <entry key="S2" value="0.02604761172304054" />
-      <entry key="S5" value="0.32359101702603243" />
-      <entry key="S10" value="0.9087394534224692" />
-      <entry key="S30" value="1.9771928686871296" />
-      <entry key="S60" value="2.429825968091151" />
-      <entry key="M2" value="2.698348222976395" />
-      <entry key="M5" value="2.8750952876055993" />
-      <entry key="M10" value="2.9368166131899947" />
-      <entry key="M15" value="2.9577134858994705" />
-      <entry key="M30" value="2.978774158698448" />
-      <entry key="H1" value="2.98936634729741" />
-      <entry key="H2" value="2.994677980267968" />
-      <entry key="H4" value="2.997386433232351" />
-      <entry key="D1" value="3.937483421095406" />
-      <entry key="W1" value="8.24731602296191" />
+      <entry key="MS100" value="0.9400009817811952" />
+      <entry key="MS500" value="1.2056467403588789" />
+      <entry key="S2" value="2.035948656089154" />
+      <entry key="S5" value="3.1118746580188477" />
+      <entry key="S10" value="3.8596723024521746" />
+      <entry key="S30" value="4.564288759849559" />
+      <entry key="S60" value="4.7743824929194" />
+      <entry key="M2" value="4.903387868885461" />
+      <entry key="M5" value="5.343633169896269" />
+      <entry key="M10" value="6.058460062514701" />
+      <entry key="M15" value="6.5042725126517436" />
+      <entry key="M30" value="7.12750386361955" />
+      <entry key="H1" value="7.527085457984562" />
+      <entry key="H2" value="7.753580841038629" />
+      <entry key="H4" value="7.874239745215692" />
+      <entry key="D1" value="8.910106729095812" />
+      <entry key="W1" value="13.23912545624712" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -133,6 +132,7 @@
     <MESSAGE value="Test Push" />
     <MESSAGE value="Shape2D + Circle" />
     <MESSAGE value="Shape2D + Circle + EquilateralTriangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shape2D + Circle + EquilateralTriangle" />
+    <MESSAGE value="Shape2D + Circle + EquilateralTriangle (Error Correction)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shape2D + Circle + EquilateralTriangle (Error Correction)" />
   </component>
 </project>

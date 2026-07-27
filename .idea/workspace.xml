@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96882280-fe53-4c19-b64e-5651a773cd60" name="Changes" comment="Shape2D + Circle + EquilateralTriangle + Rectangle">
+    <list default="true" id="96882280-fe53-4c19-b64e-5651a773cd60" name="Changes" comment="Shape2D + Circle + EquilateralTriangle + Rectangle + Square">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shapes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shapes/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,22 +18,22 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000000425586502" />
-      <entry key="S2" value="1.0153131783750988" />
-      <entry key="S5" value="1.2450076445410203" />
-      <entry key="S10" value="1.67663990747423" />
-      <entry key="S30" value="2.3824269309443125" />
-      <entry key="S60" value="2.6610866312480774" />
-      <entry key="M2" value="2.8222168587917214" />
-      <entry key="M5" value="2.933749585425005" />
-      <entry key="M10" value="3.182049011345882" />
-      <entry key="M15" value="3.6865859730551507" />
-      <entry key="M30" value="5.345012955441632" />
-      <entry key="H1" value="7.322862378748379" />
-      <entry key="H2" value="8.877080673566866" />
-      <entry key="H4" value="9.85576430671595" />
-      <entry key="D1" value="11.70686040119572" />
-      <entry key="W1" value="16.19557915933359" />
+      <entry key="MS500" value="1.0000000029522536" />
+      <entry key="S2" value="1.01248831022108" />
+      <entry key="S5" value="1.2936817368222095" />
+      <entry key="S10" value="1.9677826026037346" />
+      <entry key="S30" value="3.40938733310809" />
+      <entry key="S60" value="4.0898809017477715" />
+      <entry key="M2" value="4.511391933652012" />
+      <entry key="M5" value="4.802522725526396" />
+      <entry key="M10" value="5.1116977267354295" />
+      <entry key="M15" value="5.63387238899428" />
+      <entry key="M30" value="7.30921965465948" />
+      <entry key="H1" value="9.299349944221113" />
+      <entry key="H2" value="10.863118056128906" />
+      <entry key="H4" value="11.848088222309574" />
+      <entry key="D1" value="13.705362372575303" />
+      <entry key="W1" value="18.19528951701022" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -56,23 +55,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9526379980439373" />
-      <entry key="MS500" value="0.9903428719386892" />
-      <entry key="S2" value="1.0000086415915188" />
-      <entry key="S5" value="1.1346678674904753" />
-      <entry key="S10" value="1.519830663136132" />
-      <entry key="S30" value="2.276310543139414" />
-      <entry key="S60" value="2.5976678751787627" />
-      <entry key="M2" value="2.7875427534038817" />
-      <entry key="M5" value="2.919107375554513" />
-      <entry key="M10" value="3.174316196667333" />
-      <entry key="M15" value="3.680791471925244" />
-      <entry key="M30" value="5.340811194807331" />
-      <entry key="H1" value="7.319865123333308" />
-      <entry key="H2" value="8.87520389686337" />
-      <entry key="H4" value="9.854702572595626" />
-      <entry key="D1" value="11.706636844341046" />
-      <entry key="W1" value="16.195530135226825" />
+      <entry key="MS100" value="8.039709092952224E-40" />
+      <entry key="MS500" value="1.7977859443954782E-8" />
+      <entry key="S2" value="0.023353366023578688" />
+      <entry key="S5" value="0.4433622173183108" />
+      <entry key="S10" value="1.3160435380033817" />
+      <entry key="S30" value="3.073532679621375" />
+      <entry key="S60" value="3.896414598119461" />
+      <entry key="M2" value="4.406924501213976" />
+      <entry key="M5" value="4.758663711136118" />
+      <entry key="M10" value="5.0891301184573905" />
+      <entry key="M15" value="5.618141366908163" />
+      <entry key="M30" value="7.300028151584939" />
+      <entry key="H1" value="9.293851276074614" />
+      <entry key="H2" value="10.859988201975192" />
+      <entry key="H4" value="11.846399175904558" />
+      <entry key="D1" value="13.705034137423562" />
+      <entry key="W1" value="18.19522553524852" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -94,8 +93,10 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/QUT/Project/CAB302/CAB302_P1_Shapes_OOP - Solution",
     "node.js.detected.package.eslint": "true",
@@ -103,7 +104,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "to.speed.mode.migration.done": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -134,6 +136,7 @@
     <MESSAGE value="Shape2D + Circle + EquilateralTriangle" />
     <MESSAGE value="Shape2D + Circle + EquilateralTriangle (Error Correction)" />
     <MESSAGE value="Shape2D + Circle + EquilateralTriangle + Rectangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shape2D + Circle + EquilateralTriangle + Rectangle" />
+    <MESSAGE value="Shape2D + Circle + EquilateralTriangle + Rectangle + Square" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shape2D + Circle + EquilateralTriangle + Rectangle + Square" />
   </component>
 </project>

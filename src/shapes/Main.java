@@ -5,6 +5,8 @@ package shapes;
 
 // from-cyber
 
+// from-cyber 2
+
 import shapes.ShapeType.*;
 
 import java.util.Scanner;

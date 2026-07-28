@@ -47,18 +47,19 @@
 
 <div class="callout">
   <strong>1→9</strong>가 한 사이클.
-  <span class="tag">최초</span> = 처음·새 PC·새 계정·새 저장소일 때만 (끝났으면 건너뛰기).
-  표시 없음 = 기능 추가할 때마다.
+  <span class="tag">최초</span> = 처음·새 PC·새 계정·새 저장소일 때만 (끝났으면 건너뛰기).<br />
+  <strong>Syntax</strong> = 문법 (<code>&lt;이름&gt;</code> placeholder) ·
+  <strong>사용 예</strong> = 실제 값 (<code>origin</code>, <code>main</code>, <code>feature/…</code> 등).
+  <code>origin</code>/<code>main</code>은 고정 문구가 아니라 흔한 값이다.
 </div>
 
 <div class="flow">[최초] 계정·Git·저장소 → config → clone
-① main 맞춤 → ② feature → ③ commit → ④ push → ⑤ PR → ⑥ 피드백 → ⑦ merge → ⑧ 정리
-→ 다음 기능은 ②(실제로는 단계 2)부터</div>
+① 기본브랜치 맞춤 → ② feature → ③ commit → ④ push → ⑤ PR → ⑥ 피드백 → ⑦ merge → ⑧ 정리</div>
 
 <div class="toc">
   <ol>
-    <li><a href="#s1">시작 준비</a> <span class="tag">최초</span> 중심</li>
-    <li><a href="#s2">main 맞춤</a></li>
+    <li><a href="#s1">시작 준비</a> <span class="tag">최초</span></li>
+    <li><a href="#s2">기본 브랜치 맞춤</a></li>
     <li><a href="#s3">feature</a></li>
     <li><a href="#s4">add / commit</a></li>
     <li><a href="#s5">push</a></li>
@@ -87,7 +88,7 @@
   <tr><td>git-scm.com 설치</td><td>Windows에 Git</td><td>기본 옵션 OK</td></tr>
   <tr><td><code>git --version</code></td><td>설치 확인</td><td><code>git version 2.x.x</code></td></tr>
 </table>
-<div class="gh">IntelliJ: Settings → Version Control → Git</div>
+<div class="gh">IntelliJ: Settings → Version Control → Git · VS Code: Settings에서 <code>git.path</code></div>
 <table>
   <tr><th>옵션</th><th>의미</th></tr>
   <tr><td><a href="https://desktop.github.com">GitHub Desktop</a></td><td>GUI로 clone·commit·push</td></tr>
@@ -112,45 +113,44 @@
 <h3>1-d. 로컬 신원 <span class="tag">최초</span> · PC/계정</h3>
 <table>
   <tr><th style="width:32%">Syntax</th><th style="width:34%">의미</th><th>사용 예</th></tr>
-  <tr><td><code>git config --global user.name "…"</code></td><td>커밋 이름 <a class="fn" href="#fn1" id="fnref1b">[1]</a></td><td><code>..."Alice Kim"</code></td></tr>
-  <tr><td><code>git config --global user.email "…"</code></td><td>Emails와 동일</td><td></td></tr>
+  <tr><td><code>git config --global user.name "&lt;이름&gt;"</code></td><td>커밋 이름 <a class="fn" href="#fn1" id="fnref1b">[1]</a></td><td><code>..."Alice Kim"</code></td></tr>
+  <tr><td><code>git config --global user.email "&lt;이메일&gt;"</code></td><td>Emails와 동일</td><td><code>..."alice@qut.edu.au"</code></td></tr>
   <tr><td><code>git config --global -l</code></td><td>확인 (보조)</td><td></td></tr>
 </table>
 <table>
   <tr><th>옵션 / 보조</th><th>의미</th><th>사용 예</th></tr>
-  <tr><td><code>git config --global color.ui auto</code></td><td>터미널 색 자동</td><td></td></tr>
+  <tr><td><code>git config --global color.ui &lt;모드&gt;</code></td><td>터미널 색</td><td><code>... color.ui auto</code></td></tr>
   <tr><td><code>git config --global core.excludesfile &lt;파일&gt;</code></td><td>PC 전역 ignore</td><td><a class="fn" href="#fn19" id="fnref19b">[19]</a></td></tr>
 </table>
 
 <h3>1-e. 로컬에 저장소 두기 <span class="tag">최초</span> — 보통 clone / 옵션 init</h3>
-<p><strong>권장 (원격이 이미 있을 때): <code>git clone</code></strong></p>
+<p><strong>권장: <code>git clone</code></strong></p>
 <table>
   <tr><th style="width:32%">Syntax</th><th style="width:34%">의미</th><th>사용 예</th></tr>
-  <tr><td><em>Code</em> → URL 복사</td><td>HTTPS</td><td></td></tr>
-  <tr><td><code>git clone &lt;URL&gt;</code></td><td>원격→로컬 <a class="fn" href="#fn4" id="fnref4">[4]</a></td><td><code>git clone https://...</code></td></tr>
-  <tr><td><code>cd &lt;폴더&gt;</code></td><td>이동</td><td></td></tr>
+  <tr><td><em>Code</em> → URL 복사</td><td>HTTPS/SSH</td><td></td></tr>
+  <tr><td><code>git clone &lt;URL&gt;</code></td><td>원격→로컬 <a class="fn" href="#fn4" id="fnref4">[4]</a></td><td><code>git clone https://github.com/나/repo.git</code></td></tr>
+  <tr><td><code>cd &lt;폴더&gt;</code></td><td>이동</td><td><code>cd shapes</code></td></tr>
 </table>
 <p class="meta">이미 clone됐으면 재clone 말고 <a href="#s2">2번</a>. 로그인/토큰 <a class="fn" href="#fn5" id="fnref5">[5]</a></p>
-<p><strong>옵션 (로컬에서 먼저): <code>git init</code></strong> — Canvas식. <code>clone</code>과 <strong>둘 다 하지 않음</strong>.</p>
+<p><strong>옵션: <code>git init</code></strong> — <code>clone</code>과 <strong>둘 다 하지 않음</strong>.</p>
 <table>
   <tr><th style="width:32%">Syntax</th><th style="width:34%">의미</th><th>사용 예</th></tr>
-  <tr><td><code>cd</code> · <code>mkdir</code> · <code>cd</code></td><td>프로젝트 폴더</td><td><code>mkdir example-repo</code></td></tr>
-  <tr><td>(선택) <code>mkdir src</code></td><td>소스 폴더</td><td>IntelliJ식</td></tr>
+  <tr><td><code>cd</code> · <code>mkdir &lt;프로젝트&gt;</code> · <code>cd</code></td><td>프로젝트 폴더</td><td><code>mkdir example-repo</code></td></tr>
+  <tr><td>(선택) <code>mkdir &lt;소스폴더&gt;</code></td><td>소스 폴더</td><td><code>mkdir src</code></td></tr>
   <tr><td><code>git init</code></td><td>빈 저장소(<code>.git</code>) <a class="fn" href="#fn4">[4]</a></td><td></td></tr>
   <tr><td>파일 → <code>add</code> → <code>commit</code></td><td>첫 로컬 커밋</td><td>4번과 동일</td></tr>
-  <tr><td>GitHub 빈 저장소 (README 없이)</td><td>1-c 경우 ②</td><td></td></tr>
-  <tr><td><code>git remote add origin &lt;URL&gt;</code></td><td>원격 연결</td><td></td></tr>
-  <tr><td><code>git push -u origin main</code></td><td>첫 업로드</td><td></td></tr>
+  <tr><td><code>git remote add &lt;원격&gt; &lt;URL&gt;</code></td><td>원격 연결</td><td><code>git remote add origin https://...</code></td></tr>
+  <tr><td><code>git push -u &lt;원격&gt; &lt;브랜치&gt;</code></td><td>첫 업로드 + 추적</td><td><code>git push -u origin main</code></td></tr>
 </table>
 <table>
-  <tr><th>보조</th><th>의미</th><th></th></tr>
-  <tr><td><code>git remote -v</code></td><td><code>origin</code> 확인</td><td></td></tr>
-  <tr><td><code>git remote add upstream &lt;URL&gt;</code></td><td>Fork 원본 <a class="fn" href="#fn6" id="fnref6">[6]</a></td><td><span class="tag">최초</span> Fork</td></tr>
+  <tr><th>보조</th><th>의미</th><th>사용 예</th></tr>
+  <tr><td><code>git remote -v</code></td><td>원격 확인</td><td></td></tr>
+  <tr><td><code>git remote add &lt;원격&gt; &lt;원본URL&gt;</code></td><td>Fork 원본 <a class="fn" href="#fn6" id="fnref6">[6]</a></td><td><code>... upstream https://...</code></td></tr>
   <tr><td>SSH keys + <code>ssh-keygen</code></td><td>SSH <a class="fn" href="#fn7" id="fnref7">[7]</a></td><td><span class="tag">최초</span> 선택</td></tr>
 </table>
 
-<h3>1-f. main 보호 <span class="tag">최초</span> · 팀장 권장</h3>
-<div class="gh"><em>Settings → Branches / Rules</em> → <code>main</code> 직접 push 금지 <a class="fn" href="#fn8" id="fnref8">[8]</a></div>
+<h3>1-f. 기본 브랜치 보호 <span class="tag">최초</span> · 팀장 권장</h3>
+<div class="gh"><em>Settings → Branches / Rules</em> → 기본 브랜치 직접 push 금지 <a class="fn" href="#fn8" id="fnref8">[8]</a></div>
 
 <h3>1-g. <code>.gitignore</code> <span class="tag">최초</span> · 옵션</h3>
 <p>커밋하면 안 되는 패턴을 루트 <code>.gitignore</code>에 작성 <a class="fn" href="#fn19" id="fnref19">[19]</a></p>
@@ -162,39 +162,42 @@
 
 <h3>1-h. 확인 <span class="tag">최초</span> 직후 · 또는 의심 시</h3>
 <table>
-  <tr><th>확인</th><th>기대</th></tr>
-  <tr><td><code>git status</code> · <code>git log --oneline -5</code></td><td>main · 커밋 보임</td></tr>
-  <tr><td>GitHub 페이지 · IntelliJ Open</td><td>로컬과 대응</td></tr>
+  <tr><th>확인 (명령)</th><th>기대 (예시)</th></tr>
+  <tr><td><code>git status</code> · <code>git log --oneline -5</code></td><td><code>On branch main</code> · 최근 커밋</td></tr>
+  <tr><td>GitHub 페이지 · IDE Open</td><td>IntelliJ <em>Open</em> / VS Code <em>Open Folder</em></td></tr>
 </table>
 
 <!-- 2 -->
-<h2 id="s2">2. 최신 main 맞추기 〔매 사이클〕</h2>
+<h2 id="s2">2. 최신 기본 브랜치 맞추기 〔매 사이클〕</h2>
 <table>
   <tr><th style="width:32%">Syntax</th><th style="width:34%">의미</th><th>사용 예</th></tr>
-  <tr><td><code>git checkout main</code> / <code>switch main</code></td><td>공식 브랜치</td><td></td></tr>
-  <tr><td><code>git pull origin main</code></td><td>확정본 동기화 <a class="fn" href="#fn9" id="fnref9">[9]</a></td><td></td></tr>
+  <tr><td><code>git checkout &lt;브랜치&gt;</code> / <code>switch &lt;브랜치&gt;</code></td><td>브랜치 이동</td><td><code>git checkout main</code></td></tr>
+  <tr><td><code>git pull &lt;원격&gt; &lt;브랜치&gt;</code></td><td>원격 받아 병합 <a class="fn" href="#fn9" id="fnref9">[9]</a></td><td><code>git pull origin main</code></td></tr>
 </table>
-<div class="gh">브랜치 <em>main</em> · Fork면 <em>Sync fork</em> 후 pull</div>
+<div class="gh">기본 브랜치(보통 <em>main</em>) · Fork면 <em>Sync fork</em> 후 pull</div>
 <table>
-  <tr><th>보조</th><th>의미</th><th>주의</th></tr>
-  <tr><td><code>git fetch origin</code></td><td>원격 정보만</td><td>병합 안 함</td></tr>
-  <tr><td><code>git merge origin/main</code></td><td>fetch 후 병합</td><td>pull과 유사</td></tr>
-  <tr><td><code>git reset --hard origin/main</code></td><td>강제 일치 <a class="fn" href="#fn10" id="fnref10">[10]</a></td><td>미저장 삭제</td></tr>
-  <tr><td><code>git reset --hard &lt;커밋&gt;</code></td><td>지정 커밋으로 맞춤</td><td>공유 main 비권장</td></tr>
+  <tr><th>보조</th><th>의미</th><th>사용 예 / 주의</th></tr>
+  <tr><td><code>git fetch &lt;원격&gt;</code></td><td>원격 정보만</td><td><code>git fetch origin</code></td></tr>
+  <tr><td><code>git merge &lt;원격&gt;/&lt;브랜치&gt;</code></td><td>fetch 후 병합</td><td><code>git merge origin/main</code></td></tr>
+  <tr><td><code>git reset --hard &lt;원격&gt;/&lt;브랜치&gt;</code></td><td>강제 일치 <a class="fn" href="#fn10" id="fnref10">[10]</a></td><td><code>... origin/main</code> · 미저장 삭제</td></tr>
+  <tr><td><code>git reset --hard &lt;커밋&gt;</code></td><td>지정 커밋으로 맞춤</td><td>공유 기본 브랜치 비권장</td></tr>
 </table>
 
 <!-- 3 -->
 <h2 id="s3">3. Feature branch 〔매 사이클〕</h2>
 <table>
   <tr><th style="width:32%">Syntax</th><th style="width:34%">의미</th><th>사용 예</th></tr>
-  <tr><td><code>git checkout -b &lt;이름&gt;</code></td><td>새 갈래 <a class="fn" href="#fn11" id="fnref11">[11]</a></td><td><code>... feature/add-square</code></td></tr>
+  <tr><td><code>git checkout -b &lt;이름&gt;</code></td><td>새 갈래 <a class="fn" href="#fn11" id="fnref11">[11]</a></td><td><code>git checkout -b feature/add-square</code></td></tr>
 </table>
-<div class="gh">(선택) 웹 Create branch · 보통 로컬 후 5번 push</div>
+<div class="gh">(선택) 웹 Create branch · 보통 로컬 후 5번 push<br />
+  <strong>IntelliJ:</strong> 우측 하단 브랜치 → New Branch ·
+  <strong>VS Code:</strong> 좌측 하단 브랜치 → Create new branch…
+</div>
 <table>
   <tr><th>보조 / 옵션</th><th>의미</th><th>사용 예</th></tr>
   <tr><td><code>git branch</code> / <code>-a</code></td><td>로컬 / 원격 목록</td><td></td></tr>
   <tr><td><code>git branch &lt;이름&gt;</code></td><td>생성만 (이동 안 함)</td><td>이후 checkout</td></tr>
-  <tr><td><code>git checkout &lt;이름&gt;</code></td><td>기존 브랜치 이동</td><td></td></tr>
+  <tr><td><code>git checkout &lt;이름&gt;</code></td><td>기존 브랜치 이동</td><td><code>... feature/add-square</code></td></tr>
 </table>
 
 <!-- 4 -->
@@ -204,47 +207,58 @@
   <tr><td>(에디터 수정)</td><td>코드</td><td><code>Square.java</code></td></tr>
   <tr><td><code>git status</code></td><td>변경 확인 <a class="fn" href="#fn12" id="fnref12">[12]</a></td><td></td></tr>
   <tr><td><code>git add &lt;파일&gt;</code></td><td>stage</td><td><code>git add src/shapes/Square.java</code></td></tr>
-  <tr><td><code>git commit -m "…"</code></td><td>로컬 기록 <a class="fn" href="#fn13" id="fnref13">[13]</a></td><td><code>..."Add Square class"</code></td></tr>
+  <tr><td><code>git commit -m "&lt;메시지&gt;"</code></td><td>로컬 기록 <a class="fn" href="#fn13" id="fnref13">[13]</a></td><td><code>..."Add Square class"</code></td></tr>
 </table>
-<div class="gh">IntelliJ: 체크=<code>add</code>, Commit=<code>commit</code></div>
+<div class="gh">
+  <strong>IntelliJ:</strong> Commit 창 체크=<code>add</code>, Commit, Git→Push/Update Project<br />
+  <strong>VS Code:</strong> Source Control <code>+</code>=stage, Commit, …→Push/Pull
+</div>
 <table>
-  <tr><th>보조 — stage/차이/로그</th><th>의미</th></tr>
-  <tr><td><code>git add .</code> · <code>git diff</code> · <code>git diff --staged</code></td><td>전체 stage / 미·스테이지 차이</td></tr>
-  <tr><td><code>git restore --staged &lt;파일&gt;</code> · <code>git reset &lt;파일&gt;</code></td><td>stage 취소 (내용 유지)</td></tr>
-  <tr><td><code>git log</code> · <code>--oneline</code> · <code>--follow &lt;파일&gt;</code> · <code>--stat -M</code></td><td>히스토리 / 리네임</td></tr>
-  <tr><td><code>git log B..A</code> · <code>git diff B...A</code> · <code>git show &lt;SHA&gt;</code></td><td>브랜치 비교 / 커밋 내용</td></tr>
+  <tr><th>보조 — stage/차이/로그</th><th>의미</th><th>사용 예</th></tr>
+  <tr><td><code>git add .</code> · <code>git diff</code> · <code>git diff --staged</code></td><td>전체 stage / 미·스테이지 차이</td><td></td></tr>
+  <tr><td><code>git restore --staged &lt;파일&gt;</code> · <code>git reset &lt;파일&gt;</code></td><td>stage 취소</td><td><code>... Square.java</code></td></tr>
+  <tr><td><code>git log</code> · <code>--oneline</code> · <code>--follow &lt;파일&gt;</code> · <code>--stat -M</code></td><td>히스토리 / 리네임</td><td></td></tr>
+  <tr><td><code>git log &lt;B&gt;..&lt;A&gt;</code> · <code>git diff &lt;B&gt;...&lt;A&gt;</code> · <code>git show &lt;SHA&gt;</code></td><td>브랜치 비교 / 커밋 내용</td><td><code>main..feature/…</code></td></tr>
 </table>
 <table>
-  <tr><th>보조 — 삭제·이동</th><th>의미</th></tr>
-  <tr><td><code>git rm &lt;파일&gt;</code> · <code>git mv &lt;옛&gt; &lt;새&gt;</code></td><td>삭제/이동 + stage</td></tr>
+  <tr><th>보조 — 삭제·이동</th><th>의미</th><th>사용 예</th></tr>
+  <tr><td><code>git rm &lt;파일&gt;</code> · <code>git mv &lt;옛&gt; &lt;새&gt;</code></td><td>삭제/이동 + stage</td><td><code>git rm Old.java</code></td></tr>
 </table>
 <table>
   <tr><th>보조 — stash</th><th>의미</th></tr>
-  <tr><td><code>git stash</code> · <code>stash list</code> · <code>stash pop</code> · <code>stash drop</code></td><td>임시 저장 / 목록 / 적용 / 버리기</td></tr>
+  <tr><td><code>git stash</code> · <code>list</code> · <code>pop</code> · <code>drop</code></td><td>임시 저장 / 목록 / 적용 / 버리기</td></tr>
 </table>
 
+<!-- 5 -->
 <h2 id="s5">5. Feature Push 〔매 사이클〕</h2>
 <table>
   <tr><th style="width:32%">Syntax</th><th style="width:34%">의미</th><th>사용 예</th></tr>
-  <tr><td><code>git push -u origin &lt;브랜치&gt;</code></td><td>원격 업로드 <a class="fn" href="#fn14" id="fnref14">[14]</a></td><td><code>... feature/add-square</code></td></tr>
-  <tr><td><code>git push</code></td><td>(-u 이후)</td><td></td></tr>
+  <tr><td><code>git push -u &lt;원격&gt; &lt;브랜치&gt;</code></td><td>원격 업로드 + 추적 <a class="fn" href="#fn14" id="fnref14">[14]</a></td><td><code>git push -u origin feature/add-square</code></td></tr>
+  <tr><td><code>git push</code></td><td>(-u 이후) 현재 브랜치 → upstream</td><td>추가 커밋 후</td></tr>
+  <tr><td><code>git push &lt;원격&gt; &lt;브랜치&gt;</code></td><td>원격·브랜치 <strong>명시</strong> <a class="fn" href="#fn20" id="fnref20">[20]</a></td><td><code>git push origin main</code></td></tr>
 </table>
-<div class="gh"><em>Compare &amp; pull request</em> · <em>Branches</em> · main은 아직 그대로</div>
+<div class="gh"><em>Compare &amp; pull request</em> · <em>Branches</em> · 기본 브랜치는 아직 그대로</div>
+<table>
+  <tr><th>보조 — push vs push &lt;원격&gt; &lt;브랜치&gt;</th><th><code>git push</code></th><th><code>git push &lt;원격&gt; &lt;브랜치&gt;</code></th></tr>
+  <tr><td>대상</td><td>현재 브랜치 upstream</td><td>인자로 준 원격/브랜치</td></tr>
+  <tr><td>feature에서</td><td>그 feature 원격 (정상)</td><td>예: <code>origin feature/…</code> OK · <strong><code>origin main</code>은 보통 하지 않음</strong></td></tr>
+  <tr><td>기본 브랜치에서</td><td>upstream이면 비슷</td><td>예: <code>git push origin main</code></td></tr>
+</table>
 
 <!-- 6 -->
 <h2 id="s6">6. Pull Request · 리뷰 〔매 사이클〕</h2>
 <p class="meta">PR = GitHub 기능 <a class="fn" href="#fn15" id="fnref15">[15]</a></p>
 <table>
-  <tr><th>#</th><th>GitHub</th><th>의미</th></tr>
+  <tr><th>#</th><th>GitHub</th><th>의미 / 예</th></tr>
   <tr><td>1</td><td><em>Pull requests → New</em></td><td>요청</td></tr>
-  <tr><td>2</td><td>base=<code>main</code> ← compare=<code>feature/…</code></td><td>방향</td></tr>
+  <tr><td>2</td><td>base ← compare</td><td>예: base=<code>main</code> ← compare=<code>feature/…</code></td></tr>
   <tr><td>3–4</td><td>제목 · Reviewers · <em>Create</em></td><td></td></tr>
   <tr><td>5–6</td><td><em>Files changed</em> / Review · <em>Conversation</em></td><td>Approve 등</td></tr>
 </table>
 <table>
-  <tr><th>선택</th><th>의미</th></tr>
-  <tr><td><code>gh pr create</code></td><td>CLI PR</td></tr>
-  <tr><td><em>Checks</em> / Actions</td><td>CI 있으면 통과 확인</td></tr>
+  <tr><th>선택 CLI</th><th>의미</th><th>사용 예</th></tr>
+  <tr><td><code>gh pr create</code></td><td>CLI PR</td><td><code>gh pr create --title "…"</code></td></tr>
+  <tr><td><em>Checks</em> / Actions</td><td>CI 있으면 통과 확인</td><td></td></tr>
 </table>
 
 <!-- 7 -->
@@ -255,44 +269,44 @@
 </table>
 <div class="gh">Conversation · Reply / Resolve</div>
 <table>
-  <tr><th>보조 (충돌)</th><th>의미</th></tr>
-  <tr><td>main pull 후 feature에서 <code>git merge main</code></td><td>최신 반영 <a class="fn" href="#fn16" id="fnref16">[16]</a></td></tr>
-  <tr><td><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> 정리 → add → commit → push</td><td>충돌 해결</td></tr>
-  <tr><td>PR <em>Resolve conflicts</em></td><td>웹 해결</td></tr>
-  <tr><td><code>git rebase main</code></td><td>재배치 <a class="fn" href="#fn17" id="fnref17">[17]</a> · 익숙해진 뒤</td></tr>
+  <tr><th>보조 (충돌)</th><th>의미</th><th>사용 예</th></tr>
+  <tr><td><code>checkout &lt;기본&gt;</code> → pull → <code>checkout &lt;feature&gt;</code> → <code>merge &lt;기본&gt;</code></td><td>최신 반영 <a class="fn" href="#fn16" id="fnref16">[16]</a></td><td><code>main</code> / <code>feature/add-square</code></td></tr>
+  <tr><td>충돌 마커 정리 → add → commit → push</td><td><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> 제거</td><td></td></tr>
+  <tr><td>PR <em>Resolve conflicts</em></td><td>웹 해결</td><td></td></tr>
+  <tr><td><code>git rebase &lt;브랜치&gt;</code></td><td>재배치 <a class="fn" href="#fn17" id="fnref17">[17]</a></td><td><code>git rebase main</code></td></tr>
 </table>
 
 <!-- 8 -->
 <h2 id="s8">8. Merge 〔매 사이클〕</h2>
 <table>
   <tr><th>GitHub</th><th>의미</th></tr>
-  <tr><td><em>Merge pull request → Confirm</em></td><td>feature→main <a class="fn" href="#fn18" id="fnref18">[18]</a></td></tr>
+  <tr><td><em>Merge pull request → Confirm</em></td><td>feature→기본 브랜치 <a class="fn" href="#fn18" id="fnref18">[18]</a></td></tr>
   <tr><td>(선택) <em>Delete branch</em></td><td>원격 feature 삭제</td></tr>
 </table>
-<pre>git checkout main
+<p class="meta">웹 대신 로컬 merge (보조):</p>
+<pre>git checkout &lt;기본브랜치&gt;     # 예: main
 git pull
-git pull origin feature/add-square
+git pull &lt;원격&gt; &lt;feature&gt;   # 예: origin feature/add-square
 git push</pre>
-<p class="meta">위 = 웹 대신 로컬 merge (보조)</p>
 <table>
-  <tr><th>보조</th><th>의미</th></tr>
-  <tr><td><code>git merge &lt;브랜치&gt;</code></td><td>지정 브랜치를 현재에 병합</td></tr>
-  <tr><td><code>git revert &lt;커밋&gt;</code></td><td>main 실수 취소</td></tr>
+  <tr><th>보조</th><th>의미</th><th>사용 예</th></tr>
+  <tr><td><code>git merge &lt;브랜치&gt;</code></td><td>지정 브랜치를 현재에 병합</td><td><code>git merge feature/add-square</code></td></tr>
+  <tr><td><code>git revert &lt;커밋&gt;</code></td><td>실수 취소 (새 커밋)</td><td><code>git revert 7e8263c</code></td></tr>
 </table>
 
 <!-- 9 -->
 <h2 id="s9">9. 정리 · 다음 사이클 〔매 사이클〕</h2>
 <table>
   <tr><th style="width:32%">Syntax</th><th style="width:34%">의미</th><th>사용 예</th></tr>
-  <tr><td><code>git checkout main</code></td><td>공식 복귀</td><td></td></tr>
-  <tr><td><code>git pull origin main</code></td><td>최신 main</td><td></td></tr>
-  <tr><td><code>git branch -d &lt;feature&gt;</code></td><td>로컬 feature 삭제</td><td><code>... feature/add-square</code></td></tr>
+  <tr><td><code>git checkout &lt;기본브랜치&gt;</code></td><td>공식 복귀</td><td><code>git checkout main</code></td></tr>
+  <tr><td><code>git pull &lt;원격&gt; &lt;기본브랜치&gt;</code></td><td>최신본</td><td><code>git pull origin main</code></td></tr>
+  <tr><td><code>git branch -d &lt;feature&gt;</code></td><td>로컬 feature 삭제</td><td><code>git branch -d feature/add-square</code></td></tr>
 </table>
-<div class="gh">Delete branch · (선택) Releases / tag <code>v1.0</code></div>
+<div class="gh">Delete branch · (선택) Releases / tag 예: <code>v1.0</code></div>
 <div class="callout">
   <strong>다음 기능</strong> → <a href="#s2">2번</a>부터.
   <strong>새 PC/새 저장소</strong> → <a href="#s1">1번</a>부터.
-  <strong>저장소 생성 시점</strong> → <strong>1-c</strong> (clone 1-e보다 앞).
+  <strong>저장소 생성</strong> → <strong>1-c</strong> (clone 1-e보다 앞).
 </div>
 
 <div class="footnotes" id="footnotes">
@@ -302,21 +316,22 @@ git push</pre>
     <li id="fn2">저장소 없으면 clone URL 없음. 과제는 Fork/Collaborator가 흔함. <a class="back" href="#fnref2">↑ 본문으로</a></li>
     <li id="fn3">README 시 원격 첫 커밋. 빈 저장소면 로컬 첫 커밋 후 push. <a class="back" href="#fnref3">↑ 본문으로</a></li>
     <li id="fn4"><code>clone</code>=원격 복사+히스토리+origin. <code>init</code>=현재 폴더에 빈 저장소만(원격은 나중에 <code>remote add</code>+<code>push</code>). 같은 폴더에 둘 다 쓰지 않음. <a class="back" href="#fnref4">↑ 본문으로</a></li>
-    <li id="fn5">HTTPS는 Token/Credential/SSH. IntelliJ 브라우저 로그인 가능. <a class="back" href="#fnref5">↑ 본문으로</a></li>
-    <li id="fn6">origin=내 fork, upstream=원본. fetch upstream → merge → push origin main. <a class="back" href="#fnref6">↑ 본문으로</a></li>
+    <li id="fn5">HTTPS는 Token/Credential/SSH. IntelliJ·VS Code 브라우저/계정 로그인 가능. <a class="back" href="#fnref5">↑ 본문으로</a></li>
+    <li id="fn6">흔한 별칭: origin=내 fork, upstream=원본. fetch upstream → merge → push origin main. <a class="back" href="#fnref6">↑ 본문으로</a></li>
     <li id="fn7">SSH는 나중에 가능. 공개키만 GitHub. <a class="back" href="#fnref7">↑ 본문으로</a></li>
-    <li id="fn8">main 실수 push 거절 → feature→PR만. <a class="back" href="#fnref8">↑ 본문으로</a></li>
-    <li id="fn9"><code>pull</code>≈fetch+merge. 최신 main에서 feature 분기. <a class="back" href="#fnref9">↑ 본문으로</a></li>
+    <li id="fn8">기본 브랜치 실수 push 거절 → feature→PR만. <a class="back" href="#fnref8">↑ 본문으로</a></li>
+    <li id="fn9"><code>pull</code>≈fetch+merge. 최신 기본 브랜치에서 feature 분기. <a class="back" href="#fnref9">↑ 본문으로</a></li>
     <li id="fn10"><code>reset --hard</code>는 로컬 변경 삭제 가능. <a class="back" href="#fnref10">↑ 본문으로</a></li>
     <li id="fn11">예: <code>feature/add-square</code>. “main만 공식”은 팀 규칙. <a class="back" href="#fnref11">↑ 본문으로</a></li>
     <li id="fn12">Untracked→Staged→Unmodified. Stage=이번 커밋만 고르기. <a class="back" href="#fnref12">↑ 본문으로</a></li>
     <li id="fn13">Commit=로컬. GitHub는 push. <a class="back" href="#fnref13">↑ 본문으로</a></li>
-    <li id="fn14"><code>-u</code> 이후 <code>git push</code>만. feature push≠main 변경. <a class="back" href="#fnref14">↑ 본문으로</a></li>
+    <li id="fn14"><code>-u</code> 이후 <code>git push</code>만. feature push≠기본 브랜치 변경. <a class="back" href="#fnref14">↑ 본문으로</a></li>
     <li id="fn15">PR=병합 요청+리뷰. 중간 도움 요청에도. <a class="back" href="#fnref15">↑ 본문으로</a></li>
     <li id="fn16">충돌=같은 줄 동시 수정. 자주 2번으로 예방. <a class="back" href="#fnref16">↑ 본문으로</a></li>
     <li id="fn17">Rebase=히스토리 재작성. 초심자는 merge. <a class="back" href="#fnref17">↑ 본문으로</a></li>
-    <li id="fn18">Merge 후 main=새 확정본. Squash/Merge 팀 통일. <a class="back" href="#fnref18">↑ 본문으로</a></li>
+    <li id="fn18">Merge 후 기본 브랜치=새 확정본. Squash/Merge 팀 통일. <a class="back" href="#fnref18">↑ 본문으로</a></li>
     <li id="fn19"><code>.gitignore</code>=저장소별 무시. <code>core.excludesfile</code>=PC 전역. 이미 추적 중이면 ignore만으로 안 빠짐 → <code>git rm --cached</code>. <a class="back" href="#fnref19">↑ 본문으로</a></li>
+    <li id="fn20"><code>git push</code>=현재 브랜치→upstream. <code>git push &lt;원격&gt; &lt;브랜치&gt;</code>=직접 지정. 예 <code>origin main</code>은 placeholder에 넣은 값. feature에서 <code>push origin main</code>은 기본 브랜치 직접 push — PR과 어긋날 수 있음. <a class="back" href="#fnref20">↑ 본문으로</a></li>
   </ol>
 </div>
 
